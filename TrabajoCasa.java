@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class TrabajoCasa{
   static Scanner leer=new Scanner(System.in);
   
@@ -28,11 +27,6 @@ public class TrabajoCasa{
        case "9": Calificaciones(); break;
        case "10": SueldoTrabajadores(); break;
        default: System.out.println("La opcion no existe");
-
-
-
-
-
      }     
        do{
          System.out.println("Desea continuar S/N?");
@@ -55,7 +49,8 @@ public class TrabajoCasa{
       a++;
       sal=sal+(sal*0.10);
       System.out.println("El profesor recibió en el año " +a+ " el monto de $" +Math.ceil(sal));
-    } 
+    }
+    System.out.println("");
   }
   //---------------------------------------------------------------------------------------
   public static void Hamburguesas(){
@@ -149,65 +144,66 @@ public class TrabajoCasa{
      System.out.println("El ahorro del dia "+i+ " es:"+Math.ceil(j));
    }
      System.out.println("Ahorro anual es: "+a);
+     System.out.println("");
  }
  //--------------------------------------------------------------------------------------------------------
  public static void DepositoAhorro(){
  //Datos de entrada  
  int i, n;
-        double cantidad_01_enero, cantidad_02_febrero, cantidad_03_marzo, cantidad_04_abril, cantidad_05_mayo;
-        double cantidad_06_junio, cantidad_07_julio, cantidad_08_agosto, cantidad_09_septiembre, cantidad_10_octubre;
-        double cantidad_11_noviembre, cantidad_12_diciembre, intereses, inversion_final, total;
+        double enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre, intereses, inversion_final, total;
         total = 0;
         //Proceso
-        System.out.print("Cuantos anios a futuro desea calcular: ");
+        System.out.println("Cuantos anios a futuro desea calcular: ");
         n =leer.nextInt();
         for (i=1; i<=n; i++) {
             System.out.println("Anio: " + i);
             System.out.println("Deposito de enero: ");
-            cantidad_01_enero =leer.nextDouble();
+            enero =leer.nextDouble();
           
             System.out.println("Deposito de febrero: ");
-            cantidad_02_febrero =leer.nextDouble();
+            febrero =leer.nextDouble();
             
             System.out.println("Deposito de marzo: ");
-            cantidad_03_marzo =leer.nextDouble();
+            marzo =leer.nextDouble();
             
             System.out.println("Deposito de abril: ");
-            cantidad_04_abril =leer.nextDouble();
+            abril =leer.nextDouble();
             
             System.out.println("Deposito de mayo: ");
-            cantidad_05_mayo =leer.nextDouble();
+            mayo =leer.nextDouble();
             
             System.out.println("Deposito de junio: ");
-            cantidad_06_junio =leer.nextDouble();
+            junio =leer.nextDouble();
             
             System.out.println("Deposito de julio: ");
-            cantidad_07_julio =leer.nextDouble();
+            julio =leer.nextDouble();
             
             System.out.println("Deposito de agosto: ");
-            cantidad_08_agosto =leer.nextDouble();
+            agosto =leer.nextDouble();
             
             System.out.println("Deposito de septiembre: ");
-            cantidad_09_septiembre =leer.nextDouble();
+            septiembre =leer.nextDouble();
           
             System.out.println("Deposito de octubre: ");
-            cantidad_10_octubre =leer.nextDouble();
+            octubre =leer.nextDouble();
             
             System.out.println("Deposito de noviembre: ");
-            cantidad_11_noviembre =leer.nextDouble();
+            noviembre =leer.nextDouble();
             
             System.out.println("Deposito de diciembre: ");
-            cantidad_12_diciembre =leer.nextDouble(); 
+            diciembre =leer.nextDouble(); 
             
             intereses=total*0.1;
-            total=total+intereses+cantidad_01_enero+cantidad_02_febrero+cantidad_03_marzo+cantidad_04_abril+cantidad_05_mayo+cantidad_06_junio+cantidad_07_julio+cantidad_08_agosto+cantidad_09_septiembre+cantidad_10_octubre+cantidad_11_noviembre+cantidad_12_diciembre;
+            total=total+intereses+enero+febrero+marzo+abril+mayo+junio+julio+agosto+septiembre+octubre+noviembre+diciembre;
             inversion_final=total;
             //Datos de salida
+            System.out.println("");
             System.out.println("Valor de intereses: " + intereses);
             System.out.println("Valor de inversion final: " + inversion_final);
-            System.out.println();
+          
         }
-            System.out.println("Valor de total: " + total);
+            System.out.println("Valor total: " + total);
+            System.out.println("");
  }
  //-----------------------------------------------------------------------------------------
  public static void FExponencial(){
@@ -230,8 +226,10 @@ public class TrabajoCasa{
             ex=ex+Math.pow(x,i)/factorial;
             System.out.println();
         }
+        System.out.println("");
         System.out.println("Valor de ex: " + ex);
         System.out.println("Valor de factorial: " + factorial);
+        System.out.println("");
  }
  //------------------------------------------------------------------------------------------
  public static void Vendedor(){
@@ -261,11 +259,13 @@ public class TrabajoCasa{
             System.out.println();
         }
         //datos de salida
+        System.out.println("");
         System.out.println("Ventas realizadas por 10 mil o menos: " + venta1);
         System.out.println("Ventas realizadas por mas de 10 mil pero menos de 20 mil: " + venta2);
         System.out.println("Monto de ventas de 10 mil o menos: " +Mventa1);
         System.out.println("Monto ventas de mas de 10 mil pero menos de 20 mil: " +Mventa2);
         System.out.println("Monto global: " +Mglobal);
+        System.out.println("");
  }
  //-------------------------------------------------------------------------------------------------------------------------------------
  public static void Calificaciones(){
@@ -290,42 +290,48 @@ public class TrabajoCasa{
      }
    }
     //Datos de salida
+     System.out.println("");
      System.out.println("El numero de alumnos aprobados de la UPEU son: " +count);
      System.out.println("El numero de alumnos desaprobados de la UPEU son: " +countt);
+     System.out.println("");
  } 
  //--------------------------------------------------------------------------------------------------------------------
  public static void SueldoTrabajadores(){
+  //Datos de entrada
   int n;
-        double descuento, horas_trabajadas, sueldo_por_hora, sueldo_semanal;
-        String nombre_del_trabajador;
-        System.out.print("Ingrese el valor de n: ");
+  double descuento=0, horas_trabajadas, sueldo_por_hora, sueldo_semanal;
+  String nombre_del_trabajador;
+  //Proceso
+        System.out.println("Ingrese el N° de trabajadores a consultar:");
         n=leer.nextInt();
         
         for (int i=1; i<=n; i++) {
-            System.out.print("PROCESO " + i);
-            System.out.print("Ingrese el nombre del trabajador: ");
-            nombre_del_trabajador=leer.nextLine();
-            System.out.print("Ingrese el valor de horas trabajadas: ");
+            System.out.println("TRABAJADOR N°" + i);
+            System.out.println("Ingrese el nombre:");
+            nombre_del_trabajador=leer.next();
+            System.out.println("Ingrese las horas trabajadas: ");
             horas_trabajadas=leer.nextDouble();
-            
-            System.out.print("Ingrese el valor de sueldo por hora: ");
+            System.out.println("Ingrese cuanto gana por hora: ");
             sueldo_por_hora=leer.nextDouble();
             
             sueldo_semanal=horas_trabajadas*sueldo_por_hora;
-            descuento=0;
+            
             if(sueldo_semanal>0 && sueldo_semanal<=150)
                 descuento=sueldo_semanal*0.05;
             if(sueldo_semanal>150 && sueldo_semanal<=300)
                 descuento=sueldo_semanal*0.07;
             if(sueldo_semanal>300 && sueldo_semanal<=450)
                 descuento=sueldo_semanal*0.09;
-            sueldo_semanal=sueldo_semanal-descuento;
-            System.out.println("Nombre del trabajador: " + nombre_del_trabajador);
-            System.out.println("Valor de descuento: " + descuento);
-            System.out.println("Valor de sueldo semanal: " + sueldo_semanal);
-            System.out.println();
+            sueldo_semanal-=descuento;
+            //Datos de salida
+            System.out.println("");
+            System.out.println("Nombre del trabajador: " +nombre_del_trabajador);
+            System.out.println("Descuento: " +descuento);
+            System.out.println("Sueldo semanal sera de: $ " +sueldo_semanal);
+            
         }
- }      
+    System.out.println("");       
+ }     
 }
 
  
